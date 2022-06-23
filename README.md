@@ -1,5 +1,7 @@
 # WeatherApp
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/nwamugo/weather-app/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/nwamugo/weather-app/tree/master)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
 
 ## Hosting

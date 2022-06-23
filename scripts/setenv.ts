@@ -24,6 +24,7 @@ export const environment = {
 writeFile(targetPath, environmentFileContent, function(err: any) {
   if (err) {
     console.log('An error occurred', err);
+    return;
   }
 
   console.log(`Wrote variables to ${targetPath}`);

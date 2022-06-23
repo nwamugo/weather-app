@@ -9,7 +9,6 @@ import { filter, map, switchMap } from 'rxjs/operators';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  title = 'weather-app';
 
   constructor(
     private updates: SwUpdate,

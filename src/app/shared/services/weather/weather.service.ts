@@ -1,13 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { environment } from 'src/environments/environment';
 
 import { CurrentWeather } from '../../models/current-weather';
+import { ErrorLoggingService } from '../error-logging/error-logging.service';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +15,7 @@ export class WeatherService {
 
   constructor(
     private http: HttpClient,
-    private snackbar: MatSnackBar
+    private errorlogging: ErrorLoggingService
   ) { }
 
   getWeather(lat: number, lon: number): Observable<CurrentWeather> {
@@ -29,12 +28,7 @@ export class WeatherService {
     return this.http.get<CurrentWeather>(environment.baseUrl + 'data/2.5/weather', { params: options })
     .pipe(
       tap(console.log),
-      catchError((errors: any) => this.handleError(errors))
+      catchError((errors: any) => this.errorlogging.handleError(errors))
     )
-  }
-
-  handleError(errors: any): Observable<any> {
-    this.snackbar.open(errors.message)._dismissAfter(3000)
-    return of()
   }
 }

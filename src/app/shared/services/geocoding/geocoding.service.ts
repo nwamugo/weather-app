@@ -1,19 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 
 
 import { environment } from 'src/environments/environment';
 import { TGeocoding } from './../../models/geocoding';
+import { ErrorLoggingService } from '../error-logging/error-logging.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GeocodingService {
 
-  constructor(private http: HttpClient, private snackbar: MatSnackBar) { }
+  constructor(
+    private http: HttpClient,
+    private errorlogging: ErrorLoggingService
+  ) { }
 
   getCoordinates(city: string): Observable<TGeocoding[]> {
     const options = new HttpParams()
@@ -25,12 +28,7 @@ export class GeocodingService {
         tap(result => {
           if (!result.length) throw new TypeError('City not found')
         }),
-        catchError((errors: any) => this.handleError(errors))
+        catchError((errors: any) => this.errorlogging.handleError(errors))
     )
-  }
-
-  handleError(errors: any): Observable<any> {
-    this.snackbar.open(errors.message)._dismissAfter(3000)
-    return of()
   }
 }

@@ -1,16 +1,13 @@
 version: 2
 jobs:
   build:
-    working_directory: ~/my-project
-    docker:
-      ‐ image: circleci/node:10-browsers
+    working_directory: ~/weather-app
     steps:
-      ‐ checkout
-      ‐ restore_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      ‐ run: npm install
       ‐ save_cache:
-          key: my-project-{{ .Branch }}-{{ checksum "package-lock.json" }}
+          key: weather-app-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             ‐ "node_modules"
+      ‐ restore_cache:
+          key: weather-app-{{ .Branch }}-{{ checksum "package-lock.json" }}
+      ‐ run: npm install
       ‐ run: npm run test -- --no-watch --no-progress --browsers=ChromeHeadlessCI

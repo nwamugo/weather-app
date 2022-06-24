@@ -5,7 +5,7 @@ jobs:
   build:
     working_directory: ~/weather-app
     docker:
-      ‐ image: cimg/node:18.4.0-browsers
+      - image: cimg/node:18.4.0-browsers
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
@@ -15,11 +15,11 @@ jobs:
             chromedriver --version
           name: Check install
       - checkout
-      ‐ restore_cache:
+      - restore_cache:
           key: weather-app-{{ .Branch }}-{{ checksum "package-lock.json" }}
-      ‐ run: npm install
-      ‐ save_cache:
+      - run: npm install
+      - save_cache:
           key: weather-app-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
-            ‐ "node_modules"
-      ‐ run: npm run test
+            - "node_modules"
+      - run: npm run test

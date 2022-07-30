@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  baseUrl: 'your-api-url',
+  apiKey: 123456789
 };

@@ -5,7 +5,7 @@ import { catchError, tap } from 'rxjs/operators';
 
 
 import { environment } from 'src/environments/environment';
-import { TGeocoding } from './../../models/geocoding';
+import { TGeocoding } from '../../models/geocoding.model';
 import { ErrorLoggingService } from '../error-logging/error-logging.service';
 
 @Injectable({

@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { concatMap, tap } from 'rxjs/operators';
 
-import { CurrentWeather } from './../shared/models/current-weather';
-import { TGeocoding } from '../shared/models/geocoding';
+import { TCurrentWeather } from '../shared/models/current-weather.model';
+import { TGeocoding } from '../shared/models/geocoding.model';
 
 import { WeatherService } from '../shared/services/weather/weather.service';
 import { GeocodingService } from '../shared/services/geocoding/geocoding.service';
@@ -14,7 +14,7 @@ import { GeocodingService } from '../shared/services/geocoding/geocoding.service
   styleUrls: ['./weather.component.scss']
 })
 export class WeatherComponent implements OnInit {
-  weather$: Observable<CurrentWeather> | undefined;
+  weather$: Observable<TCurrentWeather> | undefined;
 
   constructor(
     private weatherService: WeatherService,

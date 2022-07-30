@@ -9,8 +9,8 @@ export class ErrorLoggingService {
 
   constructor(private snackbar: MatSnackBar) { }
 
-  handleError(errors: any): Observable<any> {
-    this.snackbar.open(errors.message)._dismissAfter(3000)
+  handleError(error: any): Observable<any> {
+    this.snackbar.open(error.message, '', { duration: 3000 });
     return of()
   }
 }

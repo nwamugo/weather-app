@@ -1,4 +1,4 @@
-export interface CurrentWeather {
+export type TCurrentWeather = {
   coord: {
     lon: number;
     lat: number;
@@ -36,7 +36,7 @@ export interface CurrentWeather {
   cod: number;
 }
 
-interface WeatherInfo {
+type WeatherInfo = {
   id: number;
   main: string;
   description: string;

@@ -6,13 +6,12 @@
     "config": "ts-node ./scripts/setenv.ts",
     "start": "npm run config -- --environment=dev && ng serve",
     "build": "ng build",
-    "build:prod": "npm run config -- --environment=prod && ng build --prod",
+    "build:prod": "npm run config -- --environment=prod ng build --prod",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "test:ci": "ng test --no-watch --no-progress --browsers=ChromeHeadless",
+    "test:coverage": "ng test --no-watch --code-coverage",
     "server": "http-server -p 8082 -c-1 dist/weather-app",
-    "predeploy": "npm run build:prod --base-href=/weather-app/",
-    "gh-deploy": "npx gh-pages -d dist/weather-app"
+    "predeploy": "npm run build:prod --base-href=/weather-app/"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +39,7 @@
     "@angular/compiler-cli": "^14.0.1",
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
+    "coveralls": "^3.1.1",
     "dotenv": "^16.0.1",
     "firebase-tools": "^11.0.1",
     "http-server": "^14.1.1",

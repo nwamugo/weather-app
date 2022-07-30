@@ -22,5 +22,8 @@ jobs:
           key: weather-app-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run config
-      - run: npm run test:ci
+      - run: npm run build:prod
+      - run: npm run test:coverage -- --no-progress --browsers=ChromeHeadless
+      - run:
+          name: Coveralls
+          command: cat ./coverage/weather-app/lcov.info  | ./node_modules/coveralls/bin/coveralls.js

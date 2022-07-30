@@ -1,10 +1,11 @@
 # WeatherApp
 
 [![CircleCI](https://dl.circleci.com/status-badge/img/gh/nwamugo/weather-app/tree/master.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/nwamugo/weather-app/tree/master)
+[![Coverage Status](https://coveralls.io/repos/github/nwamugo/weather-app/badge.svg?branch=master)](https://coveralls.io/github/nwamugo/weather-app?branch=master)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.5.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 
-## Hosting
+## Hosted
 
 This weather app is hosted on firebase. Click [here](https://weather-app-28599.web.app) to see it.
 

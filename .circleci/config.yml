@@ -23,4 +23,4 @@ jobs:
           paths:
             - "node_modules"
       - run: npm run config
-      - run: npm run test
+      - run: npm run test:ci

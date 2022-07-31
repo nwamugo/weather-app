@@ -10,8 +10,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:coverage": "ng test --no-watch --code-coverage",
-    "server": "http-server -p 8082 -c-1 dist/weather-app",
-    "predeploy": "npm run build:prod --base-href=/weather-app/"
+    "server": "http-server -p 8082 -c-1 dist/weather-app"
   },
   "private": true,
   "dependencies": {

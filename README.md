@@ -6,6 +6,7 @@
 ![Angular](https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white)
 ![RxJS](https://img.shields.io/badge/rxjs-%23B7178C.svg?style=for-the-badge&logo=reactivex&logoColor=white)
 ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+![PWA](https://img.shields.io/badge/-PWA-informational?style=for-the-badge)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.1.
 

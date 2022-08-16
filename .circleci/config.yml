@@ -22,7 +22,7 @@ jobs:
           key: weather-app-{{ .Branch }}-{{ checksum "package-lock.json" }}
           paths:
             - "node_modules"
-      - run: npm run build:prod
+      - run: npm run build
       - run: npm run test:coverage -- --no-progress --browsers=ChromeHeadless
       - run:
           name: Coveralls

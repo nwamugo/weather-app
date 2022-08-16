@@ -27,6 +27,6 @@ describe('HeaderComponent', () => {
   it('should render header', () => {
     const debugEl = fixture.debugElement
     const headerEl: HTMLElement = debugEl.query(By.css('span')).nativeElement;
-    expect(headerEl.textContent).toContain('your');
+    expect(headerEl.textContent).toContain('Forecast');
   })
 });

@@ -1,14 +1,13 @@
-import { fakeCoords } from './../shared/constants/fake-data.fake';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+import { first, of } from 'rxjs';
 
 import { WeatherComponent } from './weather.component';
 
 import { WeatherService } from './../shared/services/weather/weather.service';
 import { GeocodingService } from '../shared/services/geocoding/geocoding.service';
-import { TCurrentWeather } from '../shared/models/current-weather.model';
-import { first, Observable, of } from 'rxjs';
+import { fakeCoords } from './../shared/constants/fake-data.fake';
 import { fakeWeather } from '../shared/constants/fake-data.fake';
-import { By } from '@angular/platform-browser';
 
 describe('WeatherComponent', () => {
   let component: WeatherComponent;
@@ -50,6 +49,10 @@ describe('WeatherComponent', () => {
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  })
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });
@@ -80,12 +83,13 @@ describe('WeatherComponent', () => {
     weatherServiceMock.getWeather.and.returnValue(of(fakeWeather));
 
     component.search('Owerri')
-    
+
     expect(component.weather$).toBeDefined();
     component.weather$?.pipe(first()).subscribe(res => {
       expect(res.name).toEqual('Cloudy')
       expect(res.wind.speed).toEqual(30)
 
+      fixture.detectChanges();
       const debugEl = fixture.debugElement
       const titleEl: HTMLElement = debugEl.query(By.css('mat-card-title')).nativeElement;
       expect(titleEl.textContent).toContain('Nigeria')

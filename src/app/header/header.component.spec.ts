@@ -20,6 +20,10 @@ describe('HeaderComponent', () => {
     fixture.detectChanges();
   });
 
+  afterEach(() => {
+    fixture.destroy();
+  })
+
   it('should create', () => {
     expect(component).toBeTruthy();
   });

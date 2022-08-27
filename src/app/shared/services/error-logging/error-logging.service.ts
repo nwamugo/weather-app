@@ -10,7 +10,7 @@ export class ErrorLoggingService {
   constructor(private snackbar: MatSnackBar) { }
 
   handleError(error: any): Observable<any> {
-    this.snackbar.open(error.message, '', { duration: 3000 });
+    this.snackbar.open(error.message, 'CLOSE');
     return of()
   }
 }

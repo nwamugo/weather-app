@@ -119,8 +119,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "weather-app:build:production",
-            "firebaseProject": "weather-app-28599",
-            "firebaseHostingSite": "weather-app-28599"
+            "firebaseProject": "weatherforecast-nwamugo",
+            "firebaseHostingSite": "weatherforecast-nwamugo"
           }
         }
       }

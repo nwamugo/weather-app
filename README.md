@@ -12,7 +12,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Hosted
 
-This weather app is hosted on firebase. Click [here](https://weather-app-28599.web.app) to see it.
+This weather app is hosted on firebase. Click [here](https://weatherforecast-nwamugo.web.app/) to see it.
 
 ## Development server
 

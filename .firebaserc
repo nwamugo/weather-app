@@ -1,14 +1,14 @@
 {
   "targets": {
-    "weather-app-28599": {
+    "weatherforecast-nwamugo": {
       "hosting": {
         "weather-app": [
-          "weather-app-28599"
+          "weatherforecast-nwamugo"
         ]
       }
     }
   },
   "projects": {
-    "default": "weather-app-28599"
+    "default": "weatherforecast-nwamugo"
   }
 }

@@ -34,7 +34,7 @@ describe('ErrorLoggingService', () => {
     }
     errorLoggingService.handleError(errorObj);
 
-    expect(matSnackbarMock.open).toHaveBeenCalledWith("Not Found", '', {duration: 3000});
+    expect(matSnackbarMock.open).toHaveBeenCalledWith("Not Found", 'CLOSE');
     expect(matSnackbarMock.open).toHaveBeenCalledTimes(1);
   })
 
